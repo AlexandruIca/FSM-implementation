@@ -16,7 +16,7 @@ namespace fsm {
 /// \brief Representation of a deterministic finite automaton.
 ///
 template<typename State = int, typename Alphabet = char>
-class dfa : public automaton<State, Alphabet>
+class dfa final : public automaton<State, Alphabet>
 {
 private:
     using transition_t = std::vector<std::pair<Alphabet, State>>;
