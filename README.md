@@ -15,7 +15,7 @@ In [src/finite\_state\_machine/dfa.hpp](https://github.com/AlexandruIca/LFA_Tema
 am o clasa `dfa` care mosteneste `automaton` si care implementeaza(evident) un
 DFA accepter.
 
-In [src/finite\_state\_machine/dfa.hpp](https://github.com/AlexandruIca/LFA_Tema1/blob/master/src/finite_state_machine/lambda_nfa.hpp)
+In [src/finite\_state\_machine/lambda\_nfa.hpp](https://github.com/AlexandruIca/LFA_Tema1/blob/master/src/finite_state_machine/lambda_nfa.hpp)
 am o clasa `lambda_nfa` care mosteneste  la randul ei `automaton`, avand by
 default cuvantul lambda reprezentat ca '\0'. In plus mai are functia
 `check_lambda` care imi adauga in `m_current_states` starile in care pot sa
