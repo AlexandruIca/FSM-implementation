@@ -2,6 +2,8 @@
 #define FINITE_STATE_MACHINE
 #pragma once
 
+#include <vector>
+
 ///
 /// \brief Namespace that contains all relevant code for representing finite
 ///        state machines.
@@ -51,6 +53,24 @@ public:
     ///
     virtual auto reset() -> void = 0;
 };
+
+template<typename State, typename Alphabet>
+[[nodiscard]] auto accepts(fsm::automaton<State, Alphabet>& autom,
+                           std::vector<Alphabet> const& input) -> bool
+{
+    if(input.empty()) {
+        return autom.accepted();
+    }
+    for(Alphabet const& tok : input) {
+        autom.next(tok);
+
+        if(autom.aborted()) {
+            return false;
+        }
+    }
+
+    return autom.accepted();
+}
 
 } // namespace fsm
 
