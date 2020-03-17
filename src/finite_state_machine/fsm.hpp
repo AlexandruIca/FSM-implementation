@@ -12,8 +12,8 @@ enum state_kind
 {
     none = 0,
     starting = 1,
-    accepting = starting << 1,
-    starting_accepting = starting | accepting
+    accepting = 2,
+    starting_accepting = 3
 };
 
 ///
@@ -27,7 +27,12 @@ class automaton
 {
 public:
     automaton() noexcept = default;
+    automaton(automaton const&) noexcept = default;
+    automaton(automaton&&) noexcept = default;
     virtual ~automaton() noexcept = default;
+
+    auto operator=(automaton const&) noexcept -> automaton& = default;
+    auto operator=(automaton&&) noexcept -> automaton& = default;
 
     ///
     /// \brief Process next input of \ref Alphabet.

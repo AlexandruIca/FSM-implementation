@@ -28,7 +28,12 @@ private:
 
 public:
     dfa() = default;
+    dfa(dfa const&) = default;
+    dfa(dfa&&) noexcept = default;
     ~dfa() noexcept override = default;
+
+    auto operator=(dfa const&) -> dfa& = default;
+    auto operator=(dfa&&) noexcept -> dfa& = default;
 
     ///
     /// \param kind Is it an accepting/starting state or not?(or both)
