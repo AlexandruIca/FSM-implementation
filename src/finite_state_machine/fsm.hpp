@@ -61,6 +61,7 @@ template<typename State, typename Alphabet>
     if(input.empty()) {
         return autom.accepted();
     }
+
     for(Alphabet const& tok : input) {
         autom.next(tok);
 
