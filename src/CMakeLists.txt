@@ -1,6 +1,6 @@
-add_executable(${CMAKE_PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
+set(RESOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/tests/dfa.txt)
+
+add_executable(dfa ${CMAKE_CURRENT_SOURCE_DIR}/dfa.cpp ${RESOURCE_FILES})
 target_include_directories(
-  ${CMAKE_PROJECT_NAME}
-  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/finite_state_machine/)
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${project_options}
-                                                    ${project_warnings})
+  dfa PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/finite_state_machine/)
+target_link_libraries(dfa PRIVATE ${project_options} ${project_warnings})
