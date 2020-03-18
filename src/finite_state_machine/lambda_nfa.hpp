@@ -116,6 +116,21 @@ public:
     auto next(Alphabet const& input) -> void override
     {
         std::set<State> to_check{};
+
+        // case when there is a lambda transition from the starting state
+        bool first_time = m_current_states.size() == 1u &&
+                          m_current_states.back() == m_starting_state;
+
+        if(first_time) {
+            this->check_lambda(to_check, m_starting_state);
+
+            for(auto const& state : to_check) {
+                m_current_states.push_back(state);
+            }
+
+            to_check.clear();
+        }
+
         for(auto const& current_state : m_current_states) {
             for(auto const& transition : m_automaton[current_state]) {
                 if(transition.first == input) {
