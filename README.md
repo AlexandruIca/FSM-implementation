@@ -35,4 +35,4 @@ cd build/src/
 
 # Demo
 
-[!Couldn't load GIF :(](media/TemaLFA.gif)
+![Couldn't load GIF :(](media/TemaLFA.gif)
