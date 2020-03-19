@@ -32,3 +32,7 @@ cd build/src/
 ./dfa
 ./lambda_nfa
 ```
+
+# Demo
+
+[!Couldn't load GIF :(](media/TemaLFA.gif)
